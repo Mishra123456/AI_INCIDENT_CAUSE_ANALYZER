@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sentinel AI — AI-Powered Incident Root Cause Analyzer for SRE Teams. Instantly identify root causes and suggested fixes during production outages.">
+    <title>Sentinel AI — Incident Root Cause Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles.css?v=2">
+</head>
+<body>
+    <div id="app-root" class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar__brand">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Sentinel</span>
+                    <span class="brand-tag">Ops Center</span>
+                </div>
+            </div>
+
+            <nav class="sidebar__nav">
+                <button class="nav-item active" data-view="dashboard" id="nav-dashboard">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                    </svg>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-view="incidents" id="nav-incidents">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                        <line x1="12" y1="9" x2="12" y2="13"/>
+                        <line x1="12" y1="17" x2="12.01" y2="17"/>
+                    </svg>
+                    <span>Incidents</span>
+                </button>
+                <button class="nav-item" data-view="services" id="nav-services">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="8" rx="2"/>
+                        <rect x="2" y="14" width="20" height="8" rx="2"/>
+                        <circle cx="6" cy="6" r="1.5" fill="currentColor"/>
+                        <circle cx="6" cy="18" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <span>Services</span>
+                </button>
+                <button class="nav-item" data-view="analysis" id="nav-analysis">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    <span>Investigations</span>
+                </button>
+            </nav>
+
+            <div class="sidebar__footer">
+                <div class="system-status" id="system-status">
+                    <div class="status-dot status-dot--online"></div>
+                    <span>System Operational</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="topbar__left">
+                    <h1 class="page-title" id="page-title">Dashboard</h1>
+                </div>
+                <div class="topbar__right">
+                    <div class="live-indicator">
+                        <div class="live-dot"></div>
+                        <span>LIVE</span>
+                    </div>
+                    <div class="topbar-clock" id="topbar-clock"></div>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Views -->
+            <div class="content-area" id="content-area">
+                <!-- Content injected by JS -->
+                <div class="loading-screen" id="loading-screen">
+                    <div class="loader-ring"></div>
+                    <p>Initializing Sentinel Ops Center...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/app.js?v=2"></script>
+</body>
+</html>
